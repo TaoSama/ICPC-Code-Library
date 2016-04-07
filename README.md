@@ -1,5 +1,4 @@
 # ICPC_CodeLibrary
 **My source codes, templates, etc. about ICPC**  
 If u wanna check some specific problem source codes of mine  
-Plz go to [Vjudge Status](http://acm.hust.edu.cn/vjudge/problem/status.action) and search my hanlde `CHristLu` (case insensitive)  
-$\sum_{i=1}^n s_i$
+Plz go to [Vjudge Status](http://acm.hust.edu.cn/vjudge/problem/status.action) and search my handle `CHristLu` (case insensitive)  
