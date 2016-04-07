@@ -1,0 +1,1 @@
+[题目链接](http://www.bnuoj.com/v3/contest_show.php?cid=7692)
