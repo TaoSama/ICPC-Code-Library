@@ -38,7 +38,7 @@ void dijkstra() {
     q.push({0, s});
     memset(f, 0x3f, sizeof f);
     memset(cnt, 0, sizeof cnt);
-    memset(cost, 0x3f, sizeof cost);
+    memset(cost, 0, sizeof cost);
     memset(done, false, sizeof done);
     f[s] = 0; cnt[s] = 1; cost[s] = a[s];
     while(q.size()) {
@@ -80,7 +80,7 @@ int main() {
         G[u].push_back({v, c});
         G[v].push_back({u, c});
     }
-    dijkstra();
+    dijkstra(); #
 
     printf("%d %d\n", cnt[d], cost[d]);
     vector<int> path;
