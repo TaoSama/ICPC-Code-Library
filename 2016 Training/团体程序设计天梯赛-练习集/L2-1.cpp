@@ -80,7 +80,7 @@ int main() {
         G[u].push_back({v, c});
         G[v].push_back({u, c});
     }
-    dijkstra(); #
+    dijkstra();
 
     printf("%d %d\n", cnt[d], cost[d]);
     vector<int> path;
