@@ -47,7 +47,7 @@ int dfs(int x, int msk, int f1, int f2) {
                 for(int d = 0; d <= to[3]; ++d) {
                     int newF1 = f1 * 2 + a + c - b - d;
                     int newF2 = f2 * 2 + a + d - b - c;
-                    if(newF1 <= -2 || newF2 <= -2) continue;
+                    if(newF1 < -2 || newF2 < -2) continue;
                     newF1 = min(newF1, 2);
                     newF2 = min(newF2, 2);
 
