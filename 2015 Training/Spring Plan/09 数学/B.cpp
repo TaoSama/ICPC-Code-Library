@@ -24,14 +24,14 @@ const int N = 1e5 + 10, INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
 
 int euler(int n) {
-    int ret = n, t = n;
+    int ret = n;
     for(int i = 2; i * i <= n; i++) {
-        if(t % i == 0) {
+        if(n % i == 0) {
             ret = ret / i * (i - 1);
-            while(t % i == 0) t /= i;
+            while(n % i == 0) n /= i;
         }
     }
-    if(t > 1) ret = ret / t * (t - 1);
+    if(n > 1) ret = ret / n * (n - 1);
     return ret;
 }
 
