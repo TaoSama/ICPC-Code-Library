@@ -1,5 +1,5 @@
 //
-//  Created by TaoSama on 2016-10-03
+//  Created by TaoSama on 2016-10-01
 //  Copyright (c) 2016 TaoSama. All rights reserved.
 //
 #pragma comment(linker, "/STACK:102400000,102400000")
@@ -23,8 +23,7 @@ using namespace std;
 #define prln(x) cout << #x << " = " << x << endl
 const int N = 1e5 + 10, INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
-int n;
-string s;
+int t, m, h;
 
 int main() {
 #ifdef LOCAL
@@ -33,26 +32,16 @@ int main() {
 #endif
     ios_base::sync_with_stdio(0);
 
-    while(cin >> n >> s) {
-        s.push_back('_');
-        bool out = true;
-        int cnt = 0;
-        int maxv = 0, inCnt = 0;
-        for(char c : s) {
-            if(!isalpha(c)) {
-                if(out) maxv = max(maxv, cnt);
-                else if(cnt) ++inCnt;
-//              pr(c); pr(out); pr(cnt); prln(inCnt);
-
-                if(c == '(') out = false;
-                else if(c == ')') out = true;
-
-                cnt = 0;
-            } else {
-                ++cnt;
-            }
+    while(scanf("%d%d:%d", &t, &m, &h) == 3) {
+        int ans = 0;
+        if(h >= 60) h -= 60;
+        if(t == 12) {
+            if(m > 12) m -= (m / 10) * 10;
+            if(m == 0) m += 10;
+        } else {
+            if(m > 23) m -= m / 10 * 10;
         }
-        cout << maxv << ' ' << inCnt << endl;
+        printf("%02d:%02d\n", m, h);
     }
 
     return 0;

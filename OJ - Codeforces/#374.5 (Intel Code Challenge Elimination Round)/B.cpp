@@ -1,5 +1,5 @@
 //
-//  Created by TaoSama on 2016-10-03
+//  Created by TaoSama on 2016-10-01
 //  Copyright (c) 2016 TaoSama. All rights reserved.
 //
 #pragma comment(linker, "/STACK:102400000,102400000")
@@ -23,8 +23,7 @@ using namespace std;
 #define prln(x) cout << #x << " = " << x << endl
 const int N = 1e5 + 10, INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
-int n;
-string s;
+int n, p[N];
 
 int main() {
 #ifdef LOCAL
@@ -33,26 +32,18 @@ int main() {
 #endif
     ios_base::sync_with_stdio(0);
 
-    while(cin >> n >> s) {
-        s.push_back('_');
-        bool out = true;
-        int cnt = 0;
-        int maxv = 0, inCnt = 0;
-        for(char c : s) {
-            if(!isalpha(c)) {
-                if(out) maxv = max(maxv, cnt);
-                else if(cnt) ++inCnt;
-//              pr(c); pr(out); pr(cnt); prln(inCnt);
-
-                if(c == '(') out = false;
-                else if(c == ')') out = true;
-
-                cnt = 0;
-            } else {
-                ++cnt;
-            }
+    while(cin >> n) {
+        for(int i = 1; i <= n; ++i) cin >> p[i];
+        string line; getline(cin, line);
+        bool ok = true;
+        for(int i = 1; i <= n; ++i) {
+            getline(cin, line);
+            int cnt = 0;
+            static const char* vowels = "aeiouy";
+            for(char c : line) if(strchr(vowels, c)) ++cnt;
+            if(cnt != p[i]) ok = false;
         }
-        cout << maxv << ' ' << inCnt << endl;
+        cout << (ok ? "YES" : "NO") << endl;
     }
 
     return 0;

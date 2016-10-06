@@ -1,5 +1,5 @@
 //
-//  Created by TaoSama on 2016-10-01
+//  Created by TaoSama on 2016-10-03
 //  Copyright (c) 2016 TaoSama. All rights reserved.
 //
 #pragma comment(linker, "/STACK:102400000,102400000")
@@ -23,7 +23,7 @@ using namespace std;
 #define prln(x) cout << #x << " = " << x << endl
 const int N = 1e5 + 10, INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 
-int t, m, h;
+int x[3];
 
 int main() {
 #ifdef LOCAL
@@ -32,16 +32,10 @@ int main() {
 #endif
     ios_base::sync_with_stdio(0);
 
-    while(scanf("%d%d:%d", &t, &m, &h) == 3) {
-        int ans = 0;
-        if(h >= 60) h -= 60;
-        if(t == 12) {
-            if(m > 12) m -= (m / 10) * 10;
-            if(m == 0) m += 10;
-        } else {
-            if(m > 23) m -= m / 10 * 10;
-        }
-        printf("%02d:%02d\n", m, h);
+    while(cin >> x[0] >> x[1] >> x[2]) {
+        sort(x, x + 3);
+        int ans = x[2] - x[0];
+        cout << ans << endl;
     }
 
     return 0;
