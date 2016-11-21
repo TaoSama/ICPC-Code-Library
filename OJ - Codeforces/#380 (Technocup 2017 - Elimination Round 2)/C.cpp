@@ -1,44 +1,38 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define pr(x)   cout << #x << " = " << x
-#define prln(x) cout << #x << " = " << x << endl
-const int N = 2e5 + 10, INF = 0x3f3f3f3f, MOD = 1e9 + 7;
+//
+//  Created by TaoSama on 2016-11-20
+//  Copyright (c) 2016 TaoSama. All rights reserved.
+//
+#pragma comment(linker, "/STACK:102400000,102400000")
+#include <algorithm>
+#include <cctype>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+#include <iostream>
+#include <map>
+#include <queue>
+#include <string>
+#include <set>
+#include <vector>
 
-int n, s;
-int cnt[N];
+using namespace std;
+#define pr(x) cout << #x << " = " << x << "  "
+#define prln(x) cout << #x << " = " << x << endl
+const int N = 1e5 + 10, INF = 0x3f3f3f3f, MOD = 1e9 + 7;
+
+
 
 int main() {
 #ifdef LOCAL
-    freopen("C:\\Users\\luwt\\Desktop\\in.txt", "r", stdin);
-#endif // LOCAL
-    ios_base::sync_with_stdio(false);
+    freopen("C:\\Users\\TaoSama\\Desktop\\in.txt", "r", stdin);
+//  freopen("C:\\Users\\TaoSama\\Desktop\\out.txt","w",stdout);
+#endif
+    ios_base::sync_with_stdio(0);
 
-    while(scanf("%d%d", &n, &s) == 2) {
-        int ans = 0;
-        memset(cnt, 0, sizeof cnt);
-        for(int i = 1; i <= n; ++i) {
-            int x; scanf("%d", &x);
-            if(i == s) {
-                ans += x != 0;
-                x = 0;
-            } else {
-                if(x == 0) x = n;
-            }
-            ++cnt[x];
-        }
 
-        int maxv = -1;
-        for(int i = n; i && maxv == -1; --i) if(cnt[i]) maxv = i;
 
-        for(int i = 1; i < n; ++i) {
-            if(i >= maxv) break;
-            if(!cnt[i]) {
-                ++ans;
-                --cnt[maxv];
-                while(cnt[maxv] == 0) --maxv;
-            }
-        }
-        printf("%d\n", ans);
-    }
     return 0;
 }
