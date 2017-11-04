@@ -1,0 +1,19 @@
+#include<stdio.h>
+//test
+int main()
+{
+    printf("Helloworld.");
+    return 0;
+}
+#include<stdio.h>
+/* ----
+---- */
+
+/*/--/*/
+
+int main()
+{
+    // test
+    printf("Goodluck.");     // test
+    return 0;   /* -- */
+}
